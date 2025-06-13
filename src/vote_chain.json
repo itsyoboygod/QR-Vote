@@ -1,0 +1,128 @@
+[
+  {
+    "vote": "Candidate Genesis",
+    "timestamp": "2025-06-13T14:59:54.079102",
+    "prev_hash": "genesis_hash",
+    "hash": "24c1bef33114ba807cfab226c8665f16e63bcf1155ec46ef613deaca6a2ebae4"
+  },
+  {
+    "vote": "Candidate OFF",
+    "timestamp": "2025-06-13T16:57:58.861509",
+    "prev_hash": "24c1bef33114ba807cfab226c8665f16e63bcf1155ec46ef613deaca6a2ebae4",
+    "hash": "20e904534c83ae07a2955b0dae65ab390af37c17b907ab372e36896153e095a5"
+  },
+  {
+    "vote": "Candidate ON",
+    "timestamp": "2025-06-13T16:58:48.036942",
+    "prev_hash": "20e904534c83ae07a2955b0dae65ab390af37c17b907ab372e36896153e095a5",
+    "hash": "539492fc97b39ab783d46626dee391aa76718f257ecb0a8d12e40fa05ef9b5ef"
+  },
+  {
+    "vote": "Candidate A",
+    "timestamp": "2025-06-13T17:02:42.820766",
+    "prev_hash": "539492fc97b39ab783d46626dee391aa76718f257ecb0a8d12e40fa05ef9b5ef",
+    "hash": "ec24d2c0768fc345192bf9f0657dc4e1b49757ef77eee4bce28bce840b6fc55d"
+  },
+  {
+    "vote": "Candidate OFF",
+    "timestamp": "2025-06-13T17:03:24.614199",
+    "prev_hash": "ec24d2c0768fc345192bf9f0657dc4e1b49757ef77eee4bce28bce840b6fc55d",
+    "hash": "9b565b7ba162a21462473749ad889bb0575ad50199b004625d4940834d976fd3"
+  },
+  {
+    "vote": "Candidate B",
+    "timestamp": "2025-06-13T17:03:51.617857",
+    "prev_hash": "9b565b7ba162a21462473749ad889bb0575ad50199b004625d4940834d976fd3",
+    "hash": "149381d3c64fede090fa0e3c409ca17051624c6410f5b28f1b2b8c37fb4fd6d0"
+  },
+  {
+    "vote": "Candidate C",
+    "timestamp": "2025-06-13T17:04:14.141169",
+    "prev_hash": "149381d3c64fede090fa0e3c409ca17051624c6410f5b28f1b2b8c37fb4fd6d0",
+    "hash": "6837fa68cf256451ebbcb62b298c0ea018fa8da1b2dfd50934debd7d75101653"
+  },
+  {
+    "vote": "Candidate Online D",
+    "timestamp": "2025-06-13T17:10:47.537097",
+    "prev_hash": "6837fa68cf256451ebbcb62b298c0ea018fa8da1b2dfd50934debd7d75101653",
+    "hash": "7a6bd78dcfb8f1d771236071e01cce6eaa9fa3dda04333331c8e55c9b4528d6f"
+  },
+  {
+    "vote": "Candidate Offline E",
+    "timestamp": "2025-06-13T17:11:28.290318",
+    "prev_hash": "7a6bd78dcfb8f1d771236071e01cce6eaa9fa3dda04333331c8e55c9b4528d6f",
+    "hash": "1e42fb0ca77cb65f13c3a12828b1c1788e3722b99ecbf11d3b0d79901f0672ac"
+  },
+  {
+    "vote": "Candidate Online F",
+    "timestamp": "2025-06-13T17:12:00.145087",
+    "prev_hash": "1e42fb0ca77cb65f13c3a12828b1c1788e3722b99ecbf11d3b0d79901f0672ac",
+    "hash": "fc365829c462187425ea8c653a69c9d294e02d4c10c78cc703457ff24e688c5f"
+  },
+  {
+    "vote": "Candidate Offline test",
+    "timestamp": "2025-06-13T17:12:45.134872",
+    "prev_hash": "fc365829c462187425ea8c653a69c9d294e02d4c10c78cc703457ff24e688c5f",
+    "hash": "32dea0018d01e07a8a615dc916cba6ffb15d3313247e4f90ced4770624acd38a"
+  },
+  {
+    "vote": "Candidate Offline test 2",
+    "timestamp": "2025-06-13T17:17:59.163417",
+    "prev_hash": "32dea0018d01e07a8a615dc916cba6ffb15d3313247e4f90ced4770624acd38a",
+    "hash": "2e3359f4269b235722eb2ab349797bb19b11f617ea023c2fbad9133d185b557c"
+  },
+  {
+    "vote": "Candidate Online teste 2",
+    "timestamp": "2025-06-13T17:18:28.242650",
+    "prev_hash": "2e3359f4269b235722eb2ab349797bb19b11f617ea023c2fbad9133d185b557c",
+    "hash": "2ee6e342af2a79d42920dffe8f185983ca4d0cfb303631b423fdc6b4e0c673b0"
+  },
+  {
+    "vote": "Candidate Offline test",
+    "timestamp": "2025-06-13T17:20:48.601987",
+    "prev_hash": "2ee6e342af2a79d42920dffe8f185983ca4d0cfb303631b423fdc6b4e0c673b0",
+    "hash": "eb84159b437855c468a1ae3480b155dfed67e21b08bcd04b1cda7fbaa43138f1"
+  },
+  {
+    "vote": "Candidate N E W Offline test",
+    "timestamp": "2025-06-13T17:22:36.705407",
+    "prev_hash": "eb84159b437855c468a1ae3480b155dfed67e21b08bcd04b1cda7fbaa43138f1",
+    "hash": "cab985d8fd7550fe3fe6c720881849c70dcf38dd1182cf7df22ab5c7486b0f6a"
+  },
+  {
+    "vote": "Candidate N E W Online test",
+    "timestamp": "2025-06-13T17:22:57.186252",
+    "prev_hash": "cab985d8fd7550fe3fe6c720881849c70dcf38dd1182cf7df22ab5c7486b0f6a",
+    "hash": "013da913bebcd5884f31cc1917db09d1819ec4f0aa3484d036c88fd70bc824dc"
+  },
+  {
+    "vote": "Candidate offline teste",
+    "timestamp": "2025-06-13T17:49:23.979571",
+    "prev_hash": "013da913bebcd5884f31cc1917db09d1819ec4f0aa3484d036c88fd70bc824dc",
+    "hash": "324403948688f563a4897f9b5d133126f521dca91301aafe37c58a1570a2b7e9"
+  },
+  {
+    "vote": "Candidate offline teste 2",
+    "timestamp": "2025-06-13T17:52:06.162289",
+    "prev_hash": "324403948688f563a4897f9b5d133126f521dca91301aafe37c58a1570a2b7e9",
+    "hash": "4edaf219666bde64d051d1d9c112c0ded9d1e556bba3fd1c76242af04b9ce4b4"
+  },
+  {
+    "vote": "Candidate online teste 1",
+    "timestamp": "2025-06-13T17:53:28.689484",
+    "prev_hash": "4edaf219666bde64d051d1d9c112c0ded9d1e556bba3fd1c76242af04b9ce4b4",
+    "hash": "8c37d9e12210accf536112dd8d1219273f66552fb6b21e1a09723a5d844bc570"
+  },
+  {
+    "vote": "Candidate offline teste 3",
+    "timestamp": "2025-06-13T17:59:16.674502",
+    "prev_hash": "8c37d9e12210accf536112dd8d1219273f66552fb6b21e1a09723a5d844bc570",
+    "hash": "584e41a633681fb8a98a54a34c63f1887e7a89f2075178b435c8fc0e1b68ed1b"
+  },
+  {
+    "vote": "Candidate online teste 3",
+    "timestamp": "2025-06-13T17:59:54.059794",
+    "prev_hash": "584e41a633681fb8a98a54a34c63f1887e7a89f2075178b435c8fc0e1b68ed1b",
+    "hash": "2c29f47d9410207a21785315da6829e23d3bb67f967aef18c1854ee52ecd6917"
+  }
+]
