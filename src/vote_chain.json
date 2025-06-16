@@ -124,5 +124,29 @@
     "timestamp": "2025-06-13T17:59:54.059794",
     "prev_hash": "584e41a633681fb8a98a54a34c63f1887e7a89f2075178b435c8fc0e1b68ed1b",
     "hash": "2c29f47d9410207a21785315da6829e23d3bb67f967aef18c1854ee52ecd6917"
+  },
+  {
+    "vote": "Candidate X",
+    "timestamp": "2025-06-16T13:31:24.580990",
+    "prev_hash": "2c29f47d9410207a21785315da6829e23d3bb67f967aef18c1854ee52ecd6917",
+    "hash": "56b08674951caf684540a5e7d81e71457d3352b62311e4ee5f2cb8d7a3cf0a99"
+  },
+  {
+    "vote": "Candidate Xff",
+    "timestamp": "2025-06-16T13:33:14.182821",
+    "prev_hash": "56b08674951caf684540a5e7d81e71457d3352b62311e4ee5f2cb8d7a3cf0a99",
+    "hash": "1597a745348c43aefad7f4e934efcbafb4906e3b2ee9c5eff089f8c385e4b108"
+  },
+  {
+    "vote": "Candidate Xff",
+    "timestamp": "2025-06-16T13:35:11.724352",
+    "prev_hash": "1597a745348c43aefad7f4e934efcbafb4906e3b2ee9c5eff089f8c385e4b108",
+    "hash": "6dd7589ca95dead3983c40bf216236755d09df72101b1b7532da4b911a5224fa"
+  },
+  {
+    "vote": "X",
+    "timestamp": "2025-06-16T17:14:26.672411",
+    "prev_hash": "6dd7589ca95dead3983c40bf216236755d09df72101b1b7532da4b911a5224fa",
+    "hash": "c382e751e9e24212a55bfca2f42dd5f3c997df5dc72215a82db5e64b02560e65"
   }
 ]

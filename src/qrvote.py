@@ -32,7 +32,6 @@ def load_chain(g):
                 if GIST_FILENAME in gist.files:
                     content = gist.files[GIST_FILENAME].content
                     return gist, json.loads(content) if content else []
-        # Fallback to local file or create new
         local_path = os.path.join(BASE_DIR, "vote_chain.json")
         if os.path.exists(local_path):
             with open(local_path, "r") as f:
@@ -182,6 +181,20 @@ def merge_chains(local_chain, gist_chain):
         unique_chain[0]["prev_hash"] = "genesis_hash"
     return unique_chain
 
+def prune_chain(chain, vote_to_remove):
+    """Remove a specific vote and rebuild the chain"""
+    if not chain:
+        return []
+    # Filter out the vote to remove
+    remaining_chain = [block for block in chain if block["vote"] != vote_to_remove]
+    if not remaining_chain:
+        return []
+    # Re-link prev_hash and recalculate hashes
+    for i in range(len(remaining_chain)):
+        remaining_chain[i]["prev_hash"] = remaining_chain[i-1]["hash"] if i > 0 else "genesis_hash"
+        remaining_chain[i]["hash"] = hash_block(remaining_chain[i])
+    return remaining_chain
+
 def get_vote_counts(chain):
     """Calculate vote counts per candidate"""
     counts = {}
@@ -227,7 +240,15 @@ def main():
     if g and gist:
         chain = sync_local_chain(g, gist, local_chain)
 
-    # Check for scan mode, compare mode, reset, or vote input
+    # Parse candidates from command line
+    allowed_candidates = []
+    if "--candidates" in sys.argv:
+        candidates_index = sys.argv.index("--candidates")
+        allowed_candidates = sys.argv[candidates_index + 1:]
+        # Remove candidates from sys.argv to avoid misinterpretation by other flags
+        sys.argv[candidates_index:candidates_index + len(allowed_candidates) + 1] = []
+
+    # Check for scan mode, compare mode, reset, prune, or vote input
     if len(sys.argv) > 1 and sys.argv[1] == "--scan":
         if len(sys.argv) > 2:
             qr_filename = sys.argv[2]
@@ -257,25 +278,41 @@ def main():
             print("Please provide official results with --compare, e.g., --compare '{\"CandidateA\": 100, \"CandidateB\": 150}'")
     elif len(sys.argv) > 1 and sys.argv[1] == "--reset":
         reset_chain()
-    else:
-        vote = input("Enter your vote (e.g., Candidate A) or scan a QR with --scan: ") if not sys.argv[1:] else sys.argv[1]
-        if vote.strip():
-            prev_hash = chain[-1]["hash"] if chain else "genesis_hash"
-            new_block = add_vote(vote.strip(), prev_hash)
-            chain.append(new_block)
+    elif len(sys.argv) > 1 and sys.argv[1] == "--prune":
+        if len(sys.argv) > 2:
+            vote_to_remove = sys.argv[2]
+            chain = prune_chain(chain, vote_to_remove)
             url = save_chain(g, gist, chain)
             is_valid, message = validate_chain(chain)
-            print("New vote added:")
-            print(json.dumps(new_block, indent=2))
-            qr_path = create_qr_code(vote.strip())
-            if qr_path:
-                print(f"QR code saved as: {os.path.relpath(qr_path, BASE_DIR)}")
-            else:
-                print("Failed to generate QR code.")
+            print(f"Removed vote for {vote_to_remove}")
             print(f"Updated Chain saved at: {url}")
             print(f"Chain validation: {message}")
         else:
-            print("Vote cannot be empty.")
+            print("Please provide a vote to remove with --prune, e.g., --prune 'Candidate A'")
+    else:
+        # Use provided candidates or prompt if none given
+        if not allowed_candidates:
+            print("No candidates provided. Please run with --candidates flag, e.g., python qrvote.py --candidates 'Candidate A' 'Candidate B'")
+            return
+        while True:
+            vote = input(f"Select your vote ({', '.join(allowed_candidates)}) or scan a QR with --scan: ").strip()
+            if vote in allowed_candidates:
+                break
+            print(f"Invalid choice. Please select one of {', '.join(allowed_candidates)}.")
+        prev_hash = chain[-1]["hash"] if chain else "genesis_hash"
+        new_block = add_vote(vote, prev_hash)
+        chain.append(new_block)
+        url = save_chain(g, gist, chain)
+        is_valid, message = validate_chain(chain)
+        print("New vote added:")
+        print(json.dumps(new_block, indent=2))
+        qr_path = create_qr_code(vote)
+        if qr_path:
+            print(f"QR code saved as: {os.path.relpath(qr_path, BASE_DIR)}")
+        else:
+            print("Failed to generate QR code.")
+        print(f"Updated Chain saved at: {url}")
+        print(f"Chain validation: {message}")
 
 if __name__ == "__main__":
     main()
