@@ -1,32 +1,29 @@
 [
   {
+    "election_end_time": "2025-06-17T22:21:32.725929+00:00"
+  },
+  {
     "vote": "A",
-    "timestamp": "2025-06-17T13:34:56.325029",
+    "timestamp": "2025-06-17T18:21:38.133721",
     "prev_hash": "genesis_hash",
-    "hash": "3b9968c9e96d9a14bd0bd29e5403a1c23ea779df70b9a9a1fe945f90c9caba70"
+    "hash": "b442604d97097ff88d153d40a88782a01ae55f5e606761085e84b167da107880"
   },
   {
     "vote": "B",
-    "timestamp": "2025-06-17T13:35:26.213888",
-    "prev_hash": "3b9968c9e96d9a14bd0bd29e5403a1c23ea779df70b9a9a1fe945f90c9caba70",
-    "hash": "b9cffb04c99503268aed57ba41d3b3bca61b9e488c34fc45bb444e0d7dadf2be"
+    "timestamp": "2025-06-17T18:22:11.588465",
+    "prev_hash": "b442604d97097ff88d153d40a88782a01ae55f5e606761085e84b167da107880",
+    "hash": "bcae2a8634ec338d79ac5bb85dad42949dda8719d70e5fb6b585eeef0cabde3b"
   },
   {
-    "vote": "Off",
-    "timestamp": "2025-06-17T13:36:23.893346",
-    "prev_hash": "b9cffb04c99503268aed57ba41d3b3bca61b9e488c34fc45bb444e0d7dadf2be",
-    "hash": "92e80fc84012e2efa144fd3aaa5c7a99777d40dc28942948e4ae77c42cbc2154"
+    "vote": "A",
+    "timestamp": "2025-06-17T18:23:21.783795",
+    "prev_hash": "bcae2a8634ec338d79ac5bb85dad42949dda8719d70e5fb6b585eeef0cabde3b",
+    "hash": "59ae3af87e50382a3422529ff80feda003fa80111f0693545d5053ab6cc17d84"
   },
   {
-    "vote": "On",
-    "timestamp": "2025-06-17T13:37:23.789437",
-    "prev_hash": "92e80fc84012e2efa144fd3aaa5c7a99777d40dc28942948e4ae77c42cbc2154",
-    "hash": "3d5f671e19cf59bd5729aa5e502222a05f9e148d750fb1b5a10459874f25b50a"
-  },
-  {
-    "vote": "1",
-    "timestamp": "2025-06-17T13:43:44.925692",
-    "prev_hash": "3d5f671e19cf59bd5729aa5e502222a05f9e148d750fb1b5a10459874f25b50a",
-    "hash": "cc1be74bb4424e609121f3ea7497acc824da7cab5150e5dde86e362dccf53635"
+    "vote": "B",
+    "timestamp": "2025-06-17T18:39:50.831170",
+    "prev_hash": "59ae3af87e50382a3422529ff80feda003fa80111f0693545d5053ab6cc17d84",
+    "hash": "a8b0a8c87d1b5f6e3977bc3e29bf849cd4f19fd451095d2c7c71f0119a2bfde5"
   }
 ]
