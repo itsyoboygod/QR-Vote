@@ -54,5 +54,13 @@ class TestQRVote(unittest.TestCase):
         vote = qrvote.scan_and_vote(qr_path, verbose=True)
         self.assertIsNone(vote)
 
+    def test_save_chain(self):
+    chain = [{"election_end_time": "2025-06-25T17:04:00+00:00"}, {"vote": "A", "timestamp": "2025-06-25T14:04:00", "prev_hash": "genesis_hash", "hash": qrvote.hash_block({"vote": "A", "timestamp": "2025-06-25T14:04:00", "prev_hash": "genesis_hash"})}]
+    url = qrvote.save_chain(None, None, chain, verbose=True)  # Offline mode
+    self.assertTrue(os.path.exists(qrvote.os.path.join(self.test_dir, "vote_chain.json")))
+    with open(qrvote.os.path.join(self.test_dir, "vote_chain.json"), "r") as f:
+        saved_chain = json.load(f)
+    self.assertEqual(chain, saved_chain)
+
 if __name__ == '__main__':
     unittest.main()
