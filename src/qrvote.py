@@ -217,36 +217,35 @@ def scan_and_vote(qr_filename, verbose=False):
         return None
 
 def validate_chain(chain, verbose=False):
-    """Validate the vote chain with optional verbose output, skipping metadata block"""
+    """Validate the vote chain with optional verbose output, skipping non-vote blocks"""
     try:
-        if not chain or len(chain) < 2:  # No votes to validate if only metadata
-            return True, "Chain is valid (no votes yet)"
-        vote_blocks = [block for block in chain[1:] if "vote" in block]  # Only validate blocks with vote
+        if not chain or all("vote" not in block for block in chain):  # No votes to validate
+            return True, "Chain is valid (no vote blocks)"
+        vote_blocks = [block for block in chain if "vote" in block]
         if not vote_blocks:
             return True, "Chain is valid (no vote blocks)"
         for i, block in enumerate(vote_blocks[1:], 1):  # Validate from second vote block
             prev_block = vote_blocks[i-1]
             if block["prev_hash"] != prev_block["hash"]:
                 if verbose:
-                    log_verbose(f"Validation failed at block {i+1}: prev_hash {block['prev_hash']} != {prev_block['hash']}", verbose)
-                return False, f"Invalid previous hash at block {i+1}"
+                    log_verbose(f"Validation failed at block {chain.index(block)+1}: prev_hash {block['prev_hash']} != {prev_block['hash']}", verbose)
+                return False, f"Invalid prev_hash at block {chain.index(block)+1}"
             block_copy = block.copy()
             current_hash = block_copy.pop("hash")
             calculated_hash = hash_block(block_copy)
             if current_hash != calculated_hash:
                 if verbose:
-                    log_verbose(f"Validation failed at block {i+1}: stored hash {current_hash} != calculated {calculated_hash}", verbose)
-                return False, f"Invalid hash at block {i+1}"
-        # Validate the first vote block's prev_hash against genesis_hash
+                    log_verbose(f"Validation failed at block {chain.index(block)+1}: stored hash {current_hash} != calculated {calculated_hash}", verbose)
+                return False, f"Invalid hash at block {chain.index(block)+1}"
         if vote_blocks[0]["prev_hash"] != "genesis_hash":
             if verbose:
-                log_verbose(f"Validation failed at block 1: prev_hash {vote_blocks[0]['prev_hash']} != genesis_hash", verbose)
-            return False, "Invalid genesis hash at block 1"
+                log_verbose(f"Validation failed at block {chain.index(vote_blocks[0])+1}: prev_hash {vote_blocks[0]['prev_hash']} != genesis_hash", verbose)
+            return False, f"Invalid genesis hash at block {chain.index(vote_blocks[0])+1}"
         return True, "Chain is valid"
     except Exception as e:
         if verbose:
             log_verbose(f"Validation error: {e}", verbose)
-        return False, "Validation error"
+        return False, f"Validation error: {str(e)}"
 
 def save_chain(g, gist, chain, verbose=False):
     """Save the vote chain to Gist or local file"""
