@@ -1,29 +1,29 @@
 [
   {
-    "election_end_time": "2025-06-17T22:21:32.725929+00:00"
+    "election_end_time": "2025-06-18T18:16:18.850595+00:00"
   },
   {
     "vote": "A",
-    "timestamp": "2025-06-17T18:21:38.133721",
+    "timestamp": "2025-06-18T14:16:24.137661",
     "prev_hash": "genesis_hash",
-    "hash": "b442604d97097ff88d153d40a88782a01ae55f5e606761085e84b167da107880"
-  },
-  {
-    "vote": "B",
-    "timestamp": "2025-06-17T18:22:11.588465",
-    "prev_hash": "b442604d97097ff88d153d40a88782a01ae55f5e606761085e84b167da107880",
-    "hash": "bcae2a8634ec338d79ac5bb85dad42949dda8719d70e5fb6b585eeef0cabde3b"
+    "hash": "82cff25dd882852c8cf6db5abf662ca3c6cf39eb83a739b856559659cae22a76"
   },
   {
     "vote": "A",
-    "timestamp": "2025-06-17T18:23:21.783795",
-    "prev_hash": "bcae2a8634ec338d79ac5bb85dad42949dda8719d70e5fb6b585eeef0cabde3b",
-    "hash": "59ae3af87e50382a3422529ff80feda003fa80111f0693545d5053ab6cc17d84"
+    "timestamp": "2025-06-18T14:17:52.428972",
+    "prev_hash": "82cff25dd882852c8cf6db5abf662ca3c6cf39eb83a739b856559659cae22a76",
+    "hash": "128fc8cd6c67c7ba08bd21b40d97400681cbfe6602dad9ae3d4da6c01db2dcc5"
   },
   {
     "vote": "B",
-    "timestamp": "2025-06-17T18:39:50.831170",
-    "prev_hash": "59ae3af87e50382a3422529ff80feda003fa80111f0693545d5053ab6cc17d84",
-    "hash": "a8b0a8c87d1b5f6e3977bc3e29bf849cd4f19fd451095d2c7c71f0119a2bfde5"
+    "timestamp": "2025-06-18T14:23:35.177966",
+    "prev_hash": "128fc8cd6c67c7ba08bd21b40d97400681cbfe6602dad9ae3d4da6c01db2dcc5",
+    "hash": "4695a8199b7bcf35acc658b534aec5c0e8b7ec2d9e49190ef9658a8abe8e2e6d"
+  },
+  {
+    "vote": "B",
+    "timestamp": "2025-06-18T14:27:14.491028",
+    "prev_hash": "4695a8199b7bcf35acc658b534aec5c0e8b7ec2d9e49190ef9658a8abe8e2e6d",
+    "hash": "581571cf79a60f3a315430f54ad18723ee6488bbdb117c4eaf820b185af5188a"
   }
 ]

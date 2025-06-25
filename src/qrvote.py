@@ -1,15 +1,7 @@
+import json, hashlib, datetime, qrcode, base64, sys, time, re, os
 from github import Github, InputFileContent
-import json
-import hashlib
-import datetime
-import qrcode
-import base64
 from pyzbar.pyzbar import decode
 from PIL import Image
-import sys
-import os
-import time
-import re
 
 # Optional: Install pyqrcode for ASCII support if not already installed
 try:
